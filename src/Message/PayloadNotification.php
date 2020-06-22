@@ -101,10 +101,18 @@ class PayloadNotification implements Arrayable
     protected $titleLocationArgs;
 
     /**
+     * @internal
+     *
+     * @var null|string
+     */
+    protected $image;
+
+    /**
      * PayloadNotification constructor.
      *
      * @param PayloadNotificationBuilder $builder
      */
+
     public function __construct(PayloadNotificationBuilder $builder)
     {
         $this->title = $builder->getTitle();
@@ -120,6 +128,7 @@ class PayloadNotification implements Arrayable
         $this->bodyLocationArgs = $builder->getBodyLocationArgs();
         $this->titleLocationKey = $builder->getTitleLocationKey();
         $this->titleLocationArgs = $builder->getTitleLocationArgs();
+        $this->image = $builder->getImage();
     }
 
     /**
@@ -143,6 +152,7 @@ class PayloadNotification implements Arrayable
             'body_loc_args' => $this->bodyLocationArgs,
             'title_loc_key' => $this->titleLocationKey,
             'title_loc_args' => $this->titleLocationArgs,
+            'image' => $this->image,
         ];
 
         // remove null values

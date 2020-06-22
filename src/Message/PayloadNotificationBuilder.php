@@ -436,6 +436,30 @@ class PayloadNotificationBuilder
     }
 
     /**
+     * Indicates the image that can be displayed in the notification
+     *
+     * @param string $image
+     *
+     * @return PayloadNotificationBuilder current instance of the builder
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image.
+     *
+     * @return null|string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
      * Build an PayloadNotification.
      *
      * @return PayloadNotification
